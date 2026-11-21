@@ -182,7 +182,7 @@ class UserInfoScreen extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 60,
-                backgroundColor: Colors.green,
+                backgroundColor: const Color.fromARGB(255, 255, 0, 0)
                 child: CircleAvatar(
                   radius: 57,
                   backgroundColor: Colors.white,
