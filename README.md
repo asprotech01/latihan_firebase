@@ -54,7 +54,7 @@ Postman melalui Firebase Cloud Messaging API.
 **Request pengiriman notifikasi:**
 
 <p align="center">
-  <img src="lib/screenshots/1.pngscreenshots/1.png" width="750">
+  <img src="lib/screenshots/1.png width="750">
 </p>
 
 **Hasil notifikasi pada aplikasi:**
