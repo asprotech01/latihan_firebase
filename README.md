@@ -54,13 +54,13 @@ Postman melalui Firebase Cloud Messaging API.
 **Request pengiriman notifikasi:**
 
 <p align="center">
-  <img src="screenshots/1.png" width="750">
+  <img src="lib/screenshots/1.pngscreenshots/1.png" width="750">
 </p>
 
 **Hasil notifikasi pada aplikasi:**
 
 <p align="center">
-  <img src="screenshots/1_1.jpeg" width="280">
+  <img src="lib/screenshots/1_1.jpeg" width="280">
 </p>
 
 ### 2. Pengiriman Notifikasi Menggunakan Backend PHP
@@ -71,13 +71,13 @@ yang terintegrasi dengan Firebase Cloud Messaging.
 **Tampilan Backend PHP:**
 
 <p align="center">
-  <img src="screenshots/2.png" width="450">
+  <img src="lib/screenshots/2.png" width="450">
 </p>
 
 **Hasil notifikasi pada aplikasi:**
 
 <p align="center">
-  <img src="screenshots/2_2.jpeg" width="280">
+  <img src="lib/screenshots/2_2.jpeg" width="280">
 </p>
 
 ### 3. Notifikasi pada Notification Panel
@@ -86,7 +86,7 @@ Notifikasi yang dikirim melalui Postman dan Backend PHP
 ditampilkan pada notification panel perangkat Android.
 
 <p align="center">
-  <img src="screenshots/3.jpeg" width="280">
+  <img src="lib/screenshots/3.jpeg" width="280">
 </p>
 
 ## Cara Menjalankan Project
