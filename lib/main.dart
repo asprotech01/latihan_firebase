@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:trial_firebase/notification_service.dart';
+import 'package:trial_firebase/fcm_token_card.dart';
 
 import 'firebase_options.dart';
 
@@ -10,8 +13,12 @@ void main() async {
   // Inisialisasi menggunakan opsi yang di-generate sesuai platform
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   //   await Firebase.initializeApp();
+  // Daftarkan handler untuk pesan saat aplikasi background / mati   // BARU
+  FirebaseMessaging.onBackgroundMessage(firebaseMessagingBackgroundHandler);
 
   runApp(const MyApp());
+  // Inisialisasi notifikasi (izin, token, listener)                  // BARU
+  await NotificationService.init();
 }
 
 class MyApp extends StatelessWidget {
@@ -21,6 +28,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Firebase Auth Simple',
+      navigatorKey:
+          navigatorKey, // <-- BARU: agar bisa navigasi dari notifikasi
+
       theme: ThemeData(primarySwatch: Colors.blue),
       // Menggunakan StreamBuilder untuk mendeteksi status login
       home: const AuthWrapper(),
@@ -173,7 +183,7 @@ class UserInfoScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
@@ -182,7 +192,7 @@ class UserInfoScreen extends StatelessWidget {
             children: [
               CircleAvatar(
                 radius: 60,
-                backgroundColor: const Color.fromARGB(255, 255, 0, 0)
+                backgroundColor: const Color.fromARGB(255, 255, 0, 0),
                 child: CircleAvatar(
                   radius: 57,
                   backgroundColor: Colors.white,
@@ -195,6 +205,8 @@ class UserInfoScreen extends StatelessWidget {
                       : null,
                 ),
               ),
+              const SizedBox(height: 16), // <-- BARU
+              const FcmTokenCard(), // <-- BARU
 
               const SizedBox(height: 24),
               const Text(
